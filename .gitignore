@@ -5,3 +5,4 @@ __pycache__/
 .ipynb_checkpoints/
 Untitled*.ipynb
 results/*_annotated.mp4
+data/uploads/

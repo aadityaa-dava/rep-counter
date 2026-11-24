@@ -129,11 +129,13 @@ def main(src, out_dir="results"):
         angles.append((f, round(f / fps, 3), None if ang is None else round(ang, 1)))
 
         out = res.plot(boxes=False)
-        cv2.rectangle(out, (0, 0), (330, 90), (0, 0, 0), -1)
-        cv2.putText(out, f"{LABEL}: {len(reps)}", (10, 40),
-                    cv2.FONT_HERSHEY_SIMPLEX, 1.1, (0, 255, 0), 3)
+        k = max(1.0, W / 640)  # scale the text with the video size
+        cv2.rectangle(out, (0, 0), (int(330 * k), int(90 * k)), (0, 0, 0), -1)
+        cv2.putText(out, f"{LABEL}: {len(reps)}", (int(10 * k), int(40 * k)),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1.1 * k, (0, 255, 0), int(3 * k))
         txt = "angle: --" if ang is None else f"angle: {ang:.0f}  {state}"
-        cv2.putText(out, txt, (10, 75), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
+        cv2.putText(out, txt, (int(10 * k), int(75 * k)),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.8 * k, (255, 255, 255), int(2 * k))
         if WRITE:
             q.put(out)
         f += 1
