@@ -1,0 +1,13 @@
+# RepCounter backend + frontend packages.
+#
+# NOTE: torch, torchvision and OpenCV are NOT listed on purpose. The Jetson
+# Docker base image (ultralytics/ultralytics:latest-jetson-jetpack*) already
+# ships NVIDIA's GPU builds of them. Installing them again from PyPI would
+# replace them with versions that cannot use the Jetson GPU.
+
+ultralytics>=8.3      # YOLOv8n-pose, ByteTrack, TensorRT export
+lap>=0.5.12           # needed by the ByteTrack tracker
+numpy
+pandas
+matplotlib
+streamlit             # frontend (built in the frontend phase)
