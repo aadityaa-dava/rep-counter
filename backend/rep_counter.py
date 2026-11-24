@@ -26,7 +26,7 @@ KNEE = {"left": (11, 13, 15), "right": (12, 14, 16)}  # hip, knee, ankle
 EXERCISES = {
     "pushup": dict(sides=ELBOW, start=130, end=150, full=100, drop=120, label="Push-ups"),
     "curl": dict(sides=ELBOW, start=120, end=135, full=70, drop=100, label="Curls"),
-    "squat": dict(sides=KNEE, start=150, end=165, full=100, drop=140, label="Squats"),
+    "squat": dict(sides=KNEE, start=150, end=160, full=100, drop=140, label="Squats"),
 }
 
 
